@@ -11,17 +11,29 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Interface/IStartExecute.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Player/PlayerController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/MainControllers/MainMenuController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/MainGameController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Managers/InputManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Interface/IController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Player/PlayerView.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
       <option value="$PROJECT_DIR$/Assets/Scripts/GameConfig.cs" />
       <option value="$PROJECT_DIR$/Assets/TestCsript.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Config/GameConfig.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerModel.cs" />
       <option value="$PROJECT_DIR$/Assets/MainGameController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/MainControllers/MainMenuController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerView.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Interface/IController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Interface/IStartExecute.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Interface/IUpdateExecute.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/BaseScripts/BaseObjectView.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Managers/InputManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerModel.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/MainControllers/MainGameController.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1qIhA25N5ZK2n1jZil4HPm8Er6x" />
@@ -73,6 +85,7 @@
       <updated>1616772870442</updated>
       <workItem from="1616772878784" duration="8998000" />
       <workItem from="1616846603699" duration="739000" />
+      <workItem from="1616847658505" duration="5726000" />
     </task>
     <servers />
   </component>

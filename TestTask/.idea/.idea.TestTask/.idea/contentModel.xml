@@ -6,16 +6,29 @@
     <e p="P:\TestTask\TestTask" t="IncludeRecursive">
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
-        <e p="MainGameController.cs" t="Include" />
         <e p="Scripts" t="Include">
+          <e p="BaseScripts" t="Include">
+            <e p="BaseObjectView.cs" t="Include" />
+          </e>
           <e p="Config" t="Include">
             <e p="GameConfig.cs" t="Include" />
           </e>
+          <e p="Interface" t="Include">
+            <e p="IController.cs" t="Include" />
+            <e p="IStartExecute.cs" t="Include" />
+            <e p="IUpdateExecute.cs" t="Include" />
+          </e>
           <e p="MainControllers" t="Include">
+            <e p="MainGameController.cs" t="Include" />
             <e p="MainMenuController.cs" t="Include" />
           </e>
+          <e p="Managers" t="Include">
+            <e p="InputManager.cs" t="Include" />
+          </e>
           <e p="Player" t="Include">
+            <e p="PlayerController.cs" t="Include" />
             <e p="PlayerModel.cs" t="Include" />
+            <e p="PlayerView.cs" t="Include" />
           </e>
         </e>
       </e>

@@ -167,6 +167,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   config: {fileID: 11400000, guid: 50425b5ecdc1bdb4aa903677be8696c3, type: 2}
+  mainCamera: {fileID: 2106384581}
 --- !u!1 &415818226
 GameObject:
   m_ObjectHideFlags: 0
@@ -196,7 +197,7 @@ Transform:
   m_LocalScale: {x: 0.2, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 1074599972}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &415818228
 SpriteRenderer:
@@ -278,7 +279,7 @@ Transform:
   m_LocalScale: {x: 1, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 1074599972}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &916606038
 SpriteRenderer:
@@ -344,6 +345,7 @@ GameObject:
   - component: {fileID: 1074599975}
   - component: {fileID: 1074599974}
   - component: {fileID: 1074599973}
+  - component: {fileID: 1074599977}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -362,6 +364,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 2033364872}
   - {fileID: 916606037}
   - {fileID: 415818227}
   m_Father: {fileID: 0}
@@ -490,6 +493,52 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 0.5046862}
   m_EdgeRadius: 0
+--- !u!114 &1074599977
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1074599971}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20cfd1c48818e124a9538c040bd91ef8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectTransform: {fileID: 1074599972}
+  objectCollider2D: {fileID: 1074599973}
+  objectRigidbody2D: {fileID: 1074599974}
+  gunMuzzle: {fileID: 2033364872}
+--- !u!1 &2033364871
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2033364872}
+  m_Layer: 0
+  m_Name: GunMuzzle
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2033364872
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2033364871}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.754, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1074599972}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2106384579
 GameObject:
   m_ObjectHideFlags: 0
