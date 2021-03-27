@@ -21,30 +21,29 @@ namespace MainControllers
 
         #region Methods
         
-        private void ConfigFiller()
+        private void ConfigFiller(InputField input)
         {
-            if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.KeypadEnter))
+            if (input.text.Length > 0)
             {
-                if (inputField.text == null) return;
                 switch (dropdown.captionText.text)
                 {
                     case ("Player Health"):
-                        float.TryParse(inputField.text, out config.playerHealth);
+                        float.TryParse(input.text, out config.playerHealth);
                         break;
                     case ("Player Power"):
-                        float.TryParse(inputField.text, out config.playerPower);
+                        float.TryParse(input.text, out config.playerPower);
                         break;
                     case ("Enemy Health"):
-                        float.TryParse(inputField.text, out config.enemyHealth);
+                        float.TryParse(input.text, out config.enemyHealth);
                         break;
                     case ("Enemy Speed"):
-                        float.TryParse(inputField.text, out config.enemySpeed);
+                        float.TryParse(input.text, out config.enemySpeed);
                         break;
                     case ("Enemy Power"):
-                        float.TryParse(inputField.text, out config.enemyPower);
+                        float.TryParse(input.text, out config.enemyPower);
                         break;
                     case ("Enemy Spawn Ratio"):
-                        float.TryParse(inputField.text, out config.enemySpawnRatio);
+                        float.TryParse(input.text, out config.enemySpawnRatio);
                         break;
                 }
             }
@@ -69,18 +68,13 @@ namespace MainControllers
         private void Start()
         {
             config.ResetValues();
+            inputField.onEndEdit.AddListener(delegate { ConfigFiller(inputField); });
             startButton.onClick.AddListener(LoadLevel);
             exitButton.onClick.AddListener(Quit);
-        }
-
-        private void Update()
-        {
-            ConfigFiller();
         }
         
 
         #endregion
-        
         
     }
 }

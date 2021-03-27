@@ -12,13 +12,16 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/MainControllers/MainMenuController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/MainGameController.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
       <option value="$PROJECT_DIR$/Assets/Scripts/GameConfig.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/MainControllers/MainMenuController.cs" />
       <option value="$PROJECT_DIR$/Assets/TestCsript.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Config/GameConfig.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerModel.cs" />
+      <option value="$PROJECT_DIR$/Assets/MainGameController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/MainControllers/MainMenuController.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1qIhA25N5ZK2n1jZil4HPm8Er6x" />
@@ -69,6 +72,7 @@
       <option name="presentableId" value="Default" />
       <updated>1616772870442</updated>
       <workItem from="1616772878784" duration="8998000" />
+      <workItem from="1616846603699" duration="739000" />
     </task>
     <servers />
   </component>
