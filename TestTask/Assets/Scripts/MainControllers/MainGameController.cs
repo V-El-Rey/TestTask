@@ -1,5 +1,7 @@
+using System.Collections.Generic;
 using Config;
 using Player;
+using Pool;
 using UnityEngine;
 
 namespace MainControllers
@@ -8,14 +10,21 @@ namespace MainControllers
     {
         public GameConfig config;
         public Camera mainCamera;
+        public List<ObjectPoolItem> gameObjectsToPool;
 
         private PlayerController _playerController;
+        private ObjectPool _objectPool;
+
         private void Start()
-        {
+        { 
+            _objectPool = new ObjectPool();
             var playerModel = new PlayerModel(config);
+           
             var playerView = FindObjectOfType<PlayerView>();
             _playerController = new PlayerController(mainCamera, playerModel, playerView);
             _playerController.StartExecute();
+            
+            _objectPool.Initialize(gameObjectsToPool);
 
         }
 

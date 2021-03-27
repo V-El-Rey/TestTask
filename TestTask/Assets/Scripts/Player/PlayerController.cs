@@ -1,5 +1,6 @@
 using Interface;
 using Managers;
+using Pool;
 using UnityEngine;
 
 namespace Player
@@ -18,6 +19,7 @@ namespace Player
         private bool _isShooting;
         private Vector3 _rotateCoordinate;
         private Vector3 _rotateDirection;
+        private float fireRate;
 
         #endregion
         
@@ -39,6 +41,19 @@ namespace Player
             _view.transform.rotation = Quaternion.Euler(0, 0, rotationAngle + _model.rotationAngleOffset);
         }
 
+        private void Fire()
+        {
+            var bullet = ObjectPool.GetObjectFromPool("Bullet");
+            if (bullet != null)
+            {
+                bullet.transform.position = _view.gunMuzzle.position;
+                bullet.transform.rotation = _view.gunMuzzle.rotation;
+                bullet.SetActive(true);
+                bullet.GetComponent<Rigidbody2D>().AddForce((_model.playerPower / 2) * _rotateDirection,
+                    ForceMode2D.Impulse);
+            }
+        }
+
         #endregion
         
         
@@ -47,6 +62,7 @@ namespace Player
         public void StartExecute()
         {
             _inputManager = new InputManager(_camera);
+            fireRate = PlayerModel.RateOfFire;
         }
 
 
@@ -55,6 +71,12 @@ namespace Player
             _isShooting = _inputManager.IsPlayerShooting();
             _rotateCoordinate = _inputManager.GetMousePosition();
             RotatePlayer();
+            fireRate -= Time.deltaTime;
+            if (_isShooting && fireRate <= 0.0f)
+            {
+                Fire();
+                fireRate = PlayerModel.RateOfFire;
+            }
         }
 
         #endregion

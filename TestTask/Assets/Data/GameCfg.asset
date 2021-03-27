@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: GameCfg
   m_EditorClassIdentifier: 
   playerHealth: 1.4
-  playerPower: 0.2
+  playerPower: 1
   enemyHealth: 3
   enemySpeed: 1
   enemyPower: 3.4
