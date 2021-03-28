@@ -1,16 +1,30 @@
 using UnityEngine;
 
-public class CountdownTimer
+namespace Utility
 {
-    
-    public static bool CountdownEnded(float time)
+    public class CountdownTimer
     {
-        var timeToWait = time;
-        timeToWait -= Time.deltaTime;
-        if (timeToWait <= 0.0f)
+        public float _timeToWait;
+
+        public CountdownTimer(float timeToWait)
         {
-            return true;
+            _timeToWait = timeToWait;
         }
-        return false;
+
+        public void Reset(float time)
+        {
+            _timeToWait = time;
+        }
+
+        public bool Countdown(float time)
+        {
+            time -= Time.deltaTime;
+            return time == 0.0f;
+        }
+
+        public void Update()
+        {
+            Countdown(_timeToWait);
+        }
     }
 }

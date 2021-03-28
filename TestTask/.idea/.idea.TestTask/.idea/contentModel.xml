@@ -7,24 +7,54 @@
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="Scripts" t="Include">
+          <e p="Archer" t="Include">
+            <e p="ArcherModel.cs" t="Include" />
+            <e p="ArcherUnit.cs" t="Include" />
+            <e p="ArcherUnitController.cs" t="Include" />
+            <e p="ArcherView.cs" t="Include" />
+          </e>
           <e p="BaseScripts" t="Include">
             <e p="BaseObjectView.cs" t="Include" />
           </e>
-          <e p="BulletView.cs" t="Include" />
+          <e p="BombEnemy" t="Include">
+            <e p="Bomb.cs" t="Include" />
+            <e p="BombController.cs" t="Include" />
+            <e p="BombModel.cs" t="Include" />
+            <e p="BombView.cs" t="Include" />
+          </e>
+          <e p="Bullet" t="Include">
+            <e p="BulletView.cs" t="Include" />
+            <e p="EnemyBulletView.cs" t="Include" />
+          </e>
           <e p="Config" t="Include">
             <e p="GameConfig.cs" t="Include" />
           </e>
+          <e p="Infantry" t="Include">
+            <e p="InfantryModel.cs" t="Include" />
+            <e p="InfantryUnit.cs" t="Include" />
+            <e p="InfantryUnitController.cs" t="Include" />
+            <e p="InfantryView.cs" t="Include" />
+          </e>
           <e p="Interface" t="Include">
             <e p="IController.cs" t="Include" />
+            <e p="IEnemy.cs" t="Include" />
+            <e p="IEnemyController.cs" t="Include" />
+            <e p="IFixedUpdateExecute.cs" t="Include" />
+            <e p="IInputManager.cs" t="Include" />
+            <e p="IModel.cs" t="Include" />
+            <e p="IScoreManager.cs" t="Include" />
             <e p="IStartExecute.cs" t="Include" />
             <e p="IUpdateExecute.cs" t="Include" />
+            <e p="IView.cs" t="Include" />
           </e>
           <e p="MainControllers" t="Include">
             <e p="MainGameController.cs" t="Include" />
             <e p="MainMenuController.cs" t="Include" />
           </e>
           <e p="Managers" t="Include">
+            <e p="EndGameManager.cs" t="Include" />
             <e p="InputManager.cs" t="Include" />
+            <e p="ShowPointsManager.cs" t="Include" />
           </e>
           <e p="ObjectPool" t="Include">
             <e p="ObjectPool.cs" t="Include" />

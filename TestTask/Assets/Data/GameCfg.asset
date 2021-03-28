@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52aa342c2f5faf14f9045d0de7a8775a, type: 3}
   m_Name: GameCfg
   m_EditorClassIdentifier: 
-  playerHealth: 1.4
+  playerHealth: 1
   playerPower: 1
-  enemyHealth: 3
+  enemyHealth: 1
   enemySpeed: 1
-  enemyPower: 3.4
-  enemySpawnRatio: 2
+  enemyPower: 1
+  enemySpawnRatio: 1
+  pointsToWin: 1

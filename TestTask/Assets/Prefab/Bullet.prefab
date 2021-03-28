@@ -137,3 +137,4 @@ MonoBehaviour:
   objectTransform: {fileID: 7450379636644966993}
   objectCollider2D: {fileID: 5992325310049607112}
   objectRigidbody2D: {fileID: 1572149276036856802}
+  bulletHitTarget: 0

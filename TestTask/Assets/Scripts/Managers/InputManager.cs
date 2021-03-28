@@ -1,6 +1,7 @@
 using System;
 using Interface;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Managers
 {
@@ -13,8 +14,7 @@ namespace Managers
         private readonly Camera _camera;
 
         #endregion
-       
-        
+
         public InputManager(Camera camera)
         {
             _camera = camera;

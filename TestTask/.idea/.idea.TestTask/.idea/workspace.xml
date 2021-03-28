@@ -10,37 +10,89 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Interface/IStartExecute.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Player/PlayerController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/ObjectPool/ObjectPool.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Managers/ShowPointsManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Infantry/InfantryModel.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Archer/ArcherUnit.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Infantry/InfantryView.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Player/PlayerView.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Archer/ArcherModel.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Interface/IScoreManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Interface/IFixedUpdateExecute.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Infantry/InfantryUnitController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Archer/ArcherView.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Interface/IView.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Bullet/EnemyBulletView.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Utility/CountdownTimer.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/MainControllers/MainMenuController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/BulletView.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Managers/InputManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Managers/EndGameManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Interface/IController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Player/PlayerView.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Archer/ArcherUnitController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Interface/IModel.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Managers/InputManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Interface/IInputManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Infantry/InfantryUnit.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
       <option value="$PROJECT_DIR$/Assets/Scripts/GameConfig.cs" />
       <option value="$PROJECT_DIR$/Assets/TestCsript.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Config/GameConfig.cs" />
       <option value="$PROJECT_DIR$/Assets/MainGameController.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/MainControllers/MainMenuController.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerView.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Interface/IController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Interface/IStartExecute.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Interface/IUpdateExecute.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/BaseScripts/BaseObjectView.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/ObjectPool/ObjectPoolItem.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/MainControllers/MainGameController.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Managers/InputManager.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/ObjectPool/ObjectPool.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Utility/CountdownTimer.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/BulletView.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerModel.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/BombView.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/ObjectPool/ObjectPool.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Bomb/Bomb.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Interface/IView.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Interface/IModel.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Bomb/BombView.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Bomb/BombController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Bomb/BombModel.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/BombEnemy/BombModel.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Interface/IFixedUpdateExecute.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Config/GameConfig.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/MainControllers/MainMenuController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Bullet/BulletView.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Interface/IScoreManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Interface/IInputManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Managers/InputManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Managers/EndGameManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Interface/IEnemy.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Interface/NewBehaviourScript.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Interface/IEnemyController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Managers/ShowPointsManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Infantry/InfantryModel.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/BombEnemy/BombView.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/BombEnemy/Bomb.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Utility/CountdownTimer.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Infantry/InfantryView.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Infantry/InfantryUnit.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Archer/ArcherView.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Infantry/InfantryUnitController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/BombEnemy/BombController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Bullet/EnemyBulletView.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerView.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Archer/ArcherUnitController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerModel.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/MainControllers/MainGameController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Archer/ArcherModel.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Archer/ArcherUnit.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1qIhA25N5ZK2n1jZil4HPm8Er6x" />
@@ -94,6 +146,7 @@
       <workItem from="1616846603699" duration="739000" />
       <workItem from="1616847658505" duration="5726000" />
       <workItem from="1616858658497" duration="3598000" />
+      <workItem from="1616863127715" duration="52961000" />
     </task>
     <servers />
   </component>

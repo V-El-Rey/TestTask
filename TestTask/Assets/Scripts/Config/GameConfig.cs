@@ -20,6 +20,7 @@ namespace Config
         public float enemySpeed;
         public float enemyPower;
         public float enemySpawnRatio;
+        public float pointsToWin;
 
         #endregion
 
@@ -34,6 +35,7 @@ namespace Config
             enemySpeed = DefaultValue;
             enemyPower = DefaultValue;
             enemySpawnRatio = DefaultValue;
+            pointsToWin = DefaultValue;
         }
 
         #endregion

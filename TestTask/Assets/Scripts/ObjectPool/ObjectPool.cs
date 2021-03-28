@@ -5,7 +5,7 @@ namespace Pool
 {
     public class ObjectPool
     {
-        private static List<GameObject> _pooledObjects;
+        public static List<GameObject> _pooledObjects;
         private static List<ObjectPoolItem> _itemsToPool;
     
         
@@ -33,6 +33,19 @@ namespace Pool
                 }
             }
             return null;
+        }
+
+        public static List<GameObject> GetListFromPool(string tag)
+        {
+            var returnList = new List<GameObject>();
+            foreach (var item in _pooledObjects)
+            {
+                if (item.CompareTag(tag))
+                {
+                    returnList.Add(item);
+                }
+            }
+            return returnList;
         }
 
         private static void AddObjectToPool(GameObject obj)

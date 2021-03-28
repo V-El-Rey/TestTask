@@ -1,3 +1,6 @@
+using Archer;
+using BombEnemy;
+using Infantry;
 using Interface;
 using Managers;
 using Pool;
@@ -7,11 +10,10 @@ namespace Player
 {
     public class PlayerController : IStartExecute, IUpdateExecute
     {
-
-
+        
         #region PrivateData
 
-        private readonly PlayerModel _model;
+        public static PlayerModel _model;
         private readonly PlayerView _view;
         private readonly Camera _camera;
                 
@@ -19,9 +21,11 @@ namespace Player
         private bool _isShooting;
         private Vector3 _rotateCoordinate;
         private Vector3 _rotateDirection;
-        private float fireRate;
-
+        private float _fireRate;
+        
         #endregion
+
+        public bool isPlayerDead;
         
         
         public PlayerController(Camera camera, PlayerModel model, PlayerView view)
@@ -29,6 +33,10 @@ namespace Player
             _camera = camera;
             _model = model;
             _view = view;
+            _inputManager = new InputManager(_camera);
+            _view.OnBombDamageTaken += GetBombDamage;
+            _view.OnBulletDamageTaken += GetArcherDamage;
+            InfantryUnit.DoInfantryDamage += GetInfantryDamage;
         }
 
 
@@ -49,9 +57,38 @@ namespace Player
                 bullet.transform.position = _view.gunMuzzle.position;
                 bullet.transform.rotation = _view.gunMuzzle.rotation;
                 bullet.SetActive(true);
-                bullet.GetComponent<Rigidbody2D>().AddForce((_model.playerPower / 2) * _rotateDirection,
+                bullet.GetComponent<Rigidbody2D>().AddForce((_model.ShootForce) * _rotateDirection.normalized,
                     ForceMode2D.Impulse);
+                
             }
+        }
+
+        private void GetBombDamage()
+        {
+            BombController.DoBombDamage(_model);
+        }
+
+        private void GetInfantryDamage()
+        {
+            InfantryUnitController.DoDamage(_model);
+        }
+
+        private void GetArcherDamage()
+        {
+            ArcherUnitController.DoDamage(_model);
+        }
+
+        private void IsPlayerAlive()
+        {
+            if (_model.Health <= 0)
+            {
+                isPlayerDead = true;
+            }
+        }
+
+        public static void DoDamage(ref float model)
+        {
+            model -= _model.Damage;
         }
 
         #endregion
@@ -61,22 +98,23 @@ namespace Player
         
         public void StartExecute()
         {
-            _inputManager = new InputManager(_camera);
-            fireRate = PlayerModel.RateOfFire;
+            _fireRate = _model.RateOfFire;
         }
 
 
         public void UpdateExecute()
         {
+            Debug.Log(_model.Health);
             _isShooting = _inputManager.IsPlayerShooting();
             _rotateCoordinate = _inputManager.GetMousePosition();
             RotatePlayer();
-            fireRate -= Time.deltaTime;
-            if (_isShooting && fireRate <= 0.0f)
+            _fireRate -= Time.deltaTime;
+            if (_isShooting && _fireRate <= 0.0f)
             {
                 Fire();
-                fireRate = PlayerModel.RateOfFire;
+                _fireRate = _model.RateOfFire;
             }
+            IsPlayerAlive();
         }
 
         #endregion

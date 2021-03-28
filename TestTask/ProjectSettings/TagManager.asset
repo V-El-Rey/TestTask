@@ -5,6 +5,12 @@ TagManager:
   serializedVersion: 2
   tags:
   - Bullet
+  - Bomb
+  - WinText
+  - LoseText
+  - Infantry
+  - Archer
+  - Enemy Bullet
   layers:
   - Default
   - TransparentFX

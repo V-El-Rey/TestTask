@@ -45,6 +45,9 @@ namespace MainControllers
                     case ("Enemy Spawn Ratio"):
                         float.TryParse(input.text, out config.enemySpawnRatio);
                         break;
+                    case ("Points To Win"):
+                        float.TryParse(input.text, out config.pointsToWin);
+                        break;
                 }
             }
         }
