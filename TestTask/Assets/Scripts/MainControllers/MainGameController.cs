@@ -13,13 +13,8 @@ namespace MainControllers
 {
     public class MainGameController : MonoBehaviour
     {
-        public GameConfig config;
-        public Camera mainCamera;
-        public List<ObjectPoolItem> gameObjectsToPool;
-        public float pointsToWin;
-        public Canvas canvas;
-        public Text winText;
-        public Text loseText;
+
+        #region PrivateData
 
         private Vector3 _playerPosition;
 
@@ -30,33 +25,51 @@ namespace MainControllers
         private ArcherUnitController _archerController;
         private ShowPointsManager _pointsManager;
         private EndGameManager _endGameManager;
-        
+
+        #endregion
+
+
+
+        #region Fields
+
+        public GameConfig config;
+        public Camera mainCamera;
+        public List<ObjectPoolItem> gameObjectsToPool;
+        public float pointsToWin;
+        public Canvas canvas;
+        public Text winText;
+        public Text loseText;
+
+        #endregion
+
+
+        #region UnityMethods
 
         private void Start()
         {
             pointsToWin = 10 * config.pointsToWin;
             _objectPool = new ObjectPool();
             _objectPool.Initialize(gameObjectsToPool);
-            
+
             var playerModel = new PlayerModel(config);
             var bombModel = new BombModel(config);
             var infantryModel = new InfantryModel(config);
             var archerModel = new ArcherModel(config);
-           
+
             var playerView = FindObjectOfType<PlayerView>();
             _playerPosition = playerView.objectTransform.position;
 
             _bombController = new BombController(config, bombModel, _playerPosition);
             _infantryController = new InfantryUnitController(config, infantryModel, _playerPosition);
-            _archerController = new ArcherUnitController(config, archerModel, _playerPosition );
+            _archerController = new ArcherUnitController(config, archerModel, _playerPosition);
             _playerController = new PlayerController(mainCamera, playerModel, playerView);
             _pointsManager = new ShowPointsManager(canvas, pointsToWin);
             _endGameManager = new EndGameManager(canvas, winText, loseText);
-            
-            
+
+
             _playerController.StartExecute();
-            _bombController.StartExecute();
-            _infantryController.StartExecute();
+            _bombController.ControllerStartExecute("Bomb");
+            _infantryController.ControllerStartExecute("Infantry");
             _archerController.StartExecute();
             _pointsManager.StartExecute();
 
@@ -69,8 +82,7 @@ namespace MainControllers
         private void Update()
         {
             _playerController.UpdateExecute();
-            _bombController.UpdateExecute();
-            _infantryController.UpdateExecute();
+            _infantryController.ControllerUpdateExecute();
             _archerController.UpdateExecute();
             _endGameManager.CheckWinCondition(_pointsManager);
             _endGameManager.CheckLoseCondition(_playerController);
@@ -78,11 +90,14 @@ namespace MainControllers
         }
 
         private void FixedUpdate()
-        {    
-            
+        {
             _infantryController.FixedUpdateExecute();
             _bombController.FixedUpdateExecute();
             _archerController.FixedUpdateExecute();
         }
+        
+        #endregion
+        
+        
     }
 }

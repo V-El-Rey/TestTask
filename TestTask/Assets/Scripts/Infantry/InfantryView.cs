@@ -3,20 +3,16 @@ using UnityEngine;
 
 namespace Infantry
 {
-    public class InfantryView : BaseObjectView, IEnemy
-    {       
-        public bool EnemyHit { get; set; }
-        public bool IsInactive { get; set; }
-        
-        
-        public delegate void OnReturningToPool(GameObject obj);
+    public class InfantryView : BaseObjectView
+    {
 
-        public event OnReturningToPool SetRandomPosition;
-        public void OnBecameInvisible()
-        {
-            
-        }
+        public new delegate void OnReturningToPool(GameObject obj);
 
+        public new event OnReturningToPool SetRandomPosition;
+
+        
+        #region UnityMethods
+        
         public void OnTriggerEnter2D(Collider2D other)
         {
             if (other.CompareTag("Bullet"))
@@ -25,6 +21,11 @@ namespace Infantry
             }
         }
 
+        #endregion
+        
+        
+        #region Methods
+        
         public void ReturnToPool()
         {
             gameObject.SetActive(false);
@@ -33,6 +34,7 @@ namespace Infantry
             EnemyHit = false;
         }
 
+        #endregion
 
     }
 }

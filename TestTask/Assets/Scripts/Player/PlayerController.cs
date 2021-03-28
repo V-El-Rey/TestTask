@@ -22,17 +22,25 @@ namespace Player
         private Vector3 _rotateCoordinate;
         private Vector3 _rotateDirection;
         private float _fireRate;
+        private float _maxHealth;
+        private float _currentHealth;
         
         #endregion
 
+        
+        #region Fields
+        
         public bool isPlayerDead;
         
+        #endregion
         
         public PlayerController(Camera camera, PlayerModel model, PlayerView view)
         {
             _camera = camera;
             _model = model;
             _view = view;
+            _maxHealth = _model.Health;
+            _currentHealth = _maxHealth;
             _inputManager = new InputManager(_camera);
             _view.OnBombDamageTaken += GetBombDamage;
             _view.OnBulletDamageTaken += GetArcherDamage;
@@ -66,16 +74,25 @@ namespace Player
         private void GetBombDamage()
         {
             BombController.DoBombDamage(_model);
+            _currentHealth = _model.Health;
         }
 
         private void GetInfantryDamage()
         {
             InfantryUnitController.DoDamage(_model);
+            _currentHealth = _model.Health;
         }
 
         private void GetArcherDamage()
         {
             ArcherUnitController.DoDamage(_model);
+            _currentHealth = _model.Health;
+        }
+
+        private void HealthbarUpdate()
+        {
+            var normalizedFillAmount = _currentHealth / _maxHealth;
+            _view.healthBar.fillAmount = normalizedFillAmount;
         }
 
         private void IsPlayerAlive()
@@ -99,12 +116,12 @@ namespace Player
         public void StartExecute()
         {
             _fireRate = _model.RateOfFire;
+            HealthbarUpdate();
         }
 
 
         public void UpdateExecute()
         {
-            Debug.Log(_model.Health);
             _isShooting = _inputManager.IsPlayerShooting();
             _rotateCoordinate = _inputManager.GetMousePosition();
             RotatePlayer();
@@ -115,6 +132,7 @@ namespace Player
                 _fireRate = _model.RateOfFire;
             }
             IsPlayerAlive();
+            HealthbarUpdate();
         }
 
         #endregion

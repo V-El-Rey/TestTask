@@ -5,10 +5,16 @@ namespace Pool
 {
     public class ObjectPool
     {
-        public static List<GameObject> _pooledObjects;
-        private static List<ObjectPoolItem> _itemsToPool;
-    
         
+        #region PrivateData
+        
+        private static List<ObjectPoolItem> _itemsToPool;
+        private static List<GameObject> _pooledObjects;
+         
+        #endregion
+
+        #region Methods
+
         public void Initialize(List<ObjectPoolItem> objectList)
         {
             _itemsToPool = objectList;
@@ -32,6 +38,7 @@ namespace Pool
                     return t;
                 }
             }
+
             return null;
         }
 
@@ -45,6 +52,7 @@ namespace Pool
                     returnList.Add(item);
                 }
             }
+
             return returnList;
         }
 
@@ -53,5 +61,9 @@ namespace Pool
             obj.SetActive(false);
             _pooledObjects.Add(obj);
         }
+
+        #endregion
+        
+        
     }
 }

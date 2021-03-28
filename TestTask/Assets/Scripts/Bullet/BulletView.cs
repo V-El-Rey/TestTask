@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class BulletView : BaseObjectView
 {
-    public bool bulletHitTarget;
+    
+    #region UnityMethods
+    
     private void OnBecameInvisible()
     {
         ReturnToPool();
@@ -13,12 +15,18 @@ public class BulletView : BaseObjectView
     public void OnTriggerEnter2D(Collider2D other)
     {
         ReturnToPool();
-        bulletHitTarget = true;
     }
+    
+    #endregion
 
+    
+    
+    #region Methods
+    
     private void ReturnToPool()
     {
         gameObject.SetActive(false);
-        bulletHitTarget = false;
     }
+    
+    #endregion
 }

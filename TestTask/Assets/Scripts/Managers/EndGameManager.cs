@@ -8,16 +8,25 @@ namespace Managers
 {
     public class EndGameManager
     {
+        
+        #region PrivateData
+        
         private Canvas _canvas;
         private Text _winText;
         private Text _loseText;
 
+        #endregion
+        
+        
         public EndGameManager(Canvas canvas, Text winText, Text loseText)
         {
             _canvas = canvas;
             _winText = winText;
             _loseText = loseText;
         }
+
+
+        #region Methods
 
         public void CheckWinCondition(IScoreManager controller)
         {
@@ -31,7 +40,7 @@ namespace Managers
                 }
             }
         }
-
+        
         public void CheckLoseCondition(PlayerController controller)
         {
             if (controller.isPlayerDead)
@@ -44,5 +53,9 @@ namespace Managers
                 }
             }
         }
+        
+        #endregion
+        
+        
     }
 }

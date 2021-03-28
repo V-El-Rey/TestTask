@@ -14,6 +14,8 @@
             <e p="ArcherView.cs" t="Include" />
           </e>
           <e p="BaseScripts" t="Include">
+            <e p="BaseEnemy.cs" t="Include" />
+            <e p="BaseEnemyController.cs" t="Include" />
             <e p="BaseObjectView.cs" t="Include" />
           </e>
           <e p="BombEnemy" t="Include">
@@ -37,6 +39,8 @@
           </e>
           <e p="Interface" t="Include">
             <e p="IController.cs" t="Include" />
+            <e p="IControllerStartExecute.cs" t="Include" />
+            <e p="IControllerUpdateExecute.cs" t="Include" />
             <e p="IEnemy.cs" t="Include" />
             <e p="IEnemyController.cs" t="Include" />
             <e p="IFixedUpdateExecute.cs" t="Include" />
@@ -66,7 +70,7 @@
             <e p="PlayerView.cs" t="Include" />
           </e>
           <e p="Utility" t="Include">
-            <e p="CountdownTimer.cs" t="Include" />
+            <e p="HelperMethods.cs" t="Include" />
           </e>
         </e>
       </e>

@@ -1,66 +1,54 @@
+using BaseScripts;
 using Interface;
-using Player;
-using UnityEditorInternal;
 using UnityEngine;
 
 namespace Infantry
 {
-    public class InfantryUnit : IUpdateExecute, IFixedUpdateExecute
+    public class InfantryUnit : BaseEnemy
     {
-        private InfantryModel _model;
-        public readonly InfantryView _view;
-        private Vector3 _playerPosition;
-        private float _attackPosition = 1.25f;
+        
+        #region PrivateData
+        
+        private readonly float _attackDistance;
         private Vector3 _distanceToPlayer;
-        public float InfantryUnitHealth;
-
-        private float attackDelay = 3.0f;
-
+        private float _attackDelay;
+        
+        #endregion
+        
+        
         public delegate void UnitOnPosition();
 
         public static event UnitOnPosition DoInfantryDamage;
 
-        public InfantryUnit(InfantryModel model, InfantryView view, Vector3 playerPosition)
+        public InfantryUnit(IModel model, BaseObjectView view, Vector3 playerPosition):base(model,view,playerPosition)
         {
-            _model = model;
-            _view = view;
-            _playerPosition = playerPosition;
-        }
-        
-        public void Spawn()
-        {
-            _view.gameObject.SetActive(true);
-            InfantryUnitHealth = _model.Health;
-            _view.IsInactive = false;
-        }
-        
-        private void MoveToPlayer()
-        { 
-            _distanceToPlayer = _playerPosition - _view.objectTransform.position;
-            var directionToPlayer = _distanceToPlayer.normalized;
-            if (_distanceToPlayer.sqrMagnitude > _attackPosition * _attackPosition)
-            {
-                _view.objectTransform.Translate(directionToPlayer * (Time.fixedDeltaTime * _model.Speed));
-            }
-        }
-        
-
-        public void FixedUpdateExecute()
-        {
-            MoveToPlayer();
+            _attackDelay = 3.0f;
+            _attackDistance = 1.25f;
         }
 
-        public void UpdateExecute()
+        
+        #region Methods
+        
+        
+        public override void FixedUpdateExecute()
         {
-            if (_distanceToPlayer.sqrMagnitude <= _attackPosition * _attackPosition)
+            MoveToPlayer(_attackDistance);
+        }
+
+        public override void UpdateExecute()
+        {
+            if (_distanceToPlayer.sqrMagnitude <= _attackDistance * _attackDistance)
             {
-                attackDelay -= Time.deltaTime;
-                if (attackDelay <= 0.0f)
+                View.objectRigidbody2D.constraints = RigidbodyConstraints2D.FreezePosition;
+                _attackDelay -= Time.deltaTime;
+                if (_attackDelay <= 0.0f)
                 {
                     DoInfantryDamage?.Invoke();
-                    attackDelay = 3.0f;
+                    _attackDelay = 3.0f;
                 }
             }
         }
+        
+        #endregion
     }
 }

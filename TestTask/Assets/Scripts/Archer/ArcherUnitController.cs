@@ -10,19 +10,39 @@ namespace Archer
     public class ArcherUnitController : IEnemyController, IStartExecute, IUpdateExecute, IFixedUpdateExecute
     {        
         
+        
+        #region PrivateData
+        
         private readonly List<ArcherUnit> _archerList = new List<ArcherUnit>();
         private readonly Vector3 _playerPosition;
         private static float _archerDamage;
         private readonly ArcherModel _archerModel;
         
+        #endregion
+        
+        
+        #region Properties
+        
         public float TimeBeforeSpawn { get; set; } 
         public float SpawnRatio { get; set; }
+        
+        #endregion
         
         public delegate void OnArcherKilled();
 
         public event OnArcherKilled ScoreAPoint;
         
+        public ArcherUnitController(GameConfig config, ArcherModel model, Vector3 playerPosition)
+        { 
+            SpawnRatio = config.enemySpawnRatio;
+            _archerModel = model;
+            _archerDamage = _archerModel.Damage;
+            _playerPosition = playerPosition;
+            TimeBeforeSpawn = SpawnRatio;
+        }
         
+        #region Methods
+
         public void Initialize()
         {
             var archerList = ObjectPool.GetListFromPool("Archer");
@@ -37,14 +57,6 @@ namespace Archer
             }
         }
         
-        public ArcherUnitController(GameConfig config, ArcherModel model, Vector3 playerPosition)
-        {
-            SpawnRatio = config.enemySpawnRatio;
-            _archerModel = model;
-            _archerDamage = _archerModel.Damage;
-            _playerPosition = playerPosition;
-            TimeBeforeSpawn = SpawnRatio;
-        }
 
         public void GetRandomPosition(GameObject gameObject)
         {
@@ -56,8 +68,6 @@ namespace Archer
         {
             model.Health -= _archerDamage;
         }
-
-
         
         public void StartExecute()
         {
@@ -73,13 +83,15 @@ namespace Archer
             foreach (var item in _archerList)
             {
                 item.UpdateExecute();
-                if (item._view.EnemyHit)
+                if (item.View.EnemyHit)
                 {
                     PlayerController.DoDamage(ref item.ArcherUnitHealth);
-                    item._view.EnemyHit = false;
+                    item.View.EnemyHit = false;
+                    item._currentHealth = item.ArcherUnitHealth;
+                    item.HealthbarUpdate();
                     if (item.ArcherUnitHealth <= 0)
                     {
-                        item._view.ReturnToPool();
+                        item.View.ReturnToPool();
                         ScoreAPoint?.Invoke();
                     }
                 }
@@ -91,7 +103,7 @@ namespace Archer
             foreach (var item in _archerList)
             {
                 item.FixedUpdateExecute();
-                if (item._view.IsInactive)
+                if (item.View.IsInactive)
                 {
                     TimeBeforeSpawn += Time.fixedDeltaTime;
                     if (TimeBeforeSpawn > SpawnRatio)
@@ -102,5 +114,9 @@ namespace Archer
                 }
             }
         }
+        
+        #endregion
+        
+        
     }
 }

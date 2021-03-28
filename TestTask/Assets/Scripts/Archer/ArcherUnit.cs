@@ -7,63 +7,76 @@ namespace Archer
 {
     public class ArcherUnit : IUpdateExecute, IFixedUpdateExecute
     {
+        
+        #region PrivateData
+        
+        private readonly Vector3 _playerPosition;
+        private readonly float _attackDistance;
+        private readonly ArcherModel _model;
+        
         private Vector3 _distanceToPlayer;
-        private ArcherModel _model;
-        private float _attackDistance;
         private Vector3 _rotateDirection;
-        public readonly ArcherView _view;
-        private Vector3 _playerPosition;
+        private float _attackDelay = 2.0f;
+        private float _maxHealth;
+        
+        #endregion
+        
+        
+        #region Fields
+        
+        public readonly ArcherView View;
         public float ArcherUnitHealth;
+        public float _currentHealth;
         
-        private float attackDelay = 2.0f;
-        
+        #endregion
         
         public ArcherUnit(ArcherModel model, ArcherView view, Vector3 playerPosition)
         {
             _model = model;
-            _view = view;
+            View = view;
             _playerPosition = playerPosition;
             _attackDistance = 20.0f;
         }
         
+        
+        #region Methods
+        
         public void Spawn()
         {
             _rotateDirection = Vector3.one;
-            _view.gameObject.SetActive(true);
-            
-            if (_distanceToPlayer.sqrMagnitude < _attackDistance)
-            {
-                _view.EnemyHit = true;
-            }
+            View.gameObject.SetActive(true);
             ArcherUnitHealth = _model.Health;
-            _view.IsInactive = false;
+            _maxHealth = ArcherUnitHealth;
+            _currentHealth = _maxHealth;
+            HealthbarUpdate();
+            View.IsInactive = false;
         }
     
         private void MoveToPlayer()
         { 
-            _distanceToPlayer = _playerPosition - _view.objectTransform.position;
+            _distanceToPlayer = _playerPosition - View.objectTransform.position;
             var directionToPlayer = _distanceToPlayer.normalized;
             if (_distanceToPlayer.sqrMagnitude > _attackDistance)
             {
-                _view.objectTransform.Translate(directionToPlayer * (Time.fixedDeltaTime * _model.Speed));
+                View.objectTransform.Translate(directionToPlayer * (Time.fixedDeltaTime * _model.Speed));
             }
 
         }
-
-        private void RotateUnit()
+        
+        public void HealthbarUpdate()
         {
-            _rotateDirection = _playerPosition - _view.transform.position;
-            var rotationAngle = Mathf.Atan2(_rotateDirection.y, _rotateDirection.x) * Mathf.Rad2Deg;
-            _view.transform.rotation = Quaternion.Euler(0, 0, rotationAngle);
+            var normalizedFillAmount = _currentHealth / _maxHealth;
+            View.healthBar.fillAmount = normalizedFillAmount;
         }
+        
 
         private void Shoot()
         {
             var bullet = ObjectPool.GetObjectFromPool("Enemy Bullet");
             if (bullet != null)
             {
-                bullet.transform.position = _view.gunMuzzle.position;
-                bullet.transform.rotation = _view.gunMuzzle.rotation;
+                bullet.transform.position = View.gunMuzzle.position;
+                bullet.transform.rotation = View.gunMuzzle.rotation;
                 bullet.SetActive(true);
                 bullet.GetComponent<Rigidbody2D>().AddForce(_model.ShootingForce * _rotateDirection,
                     ForceMode2D.Impulse);
@@ -74,11 +87,11 @@ namespace Archer
         {
             if (_distanceToPlayer.sqrMagnitude <=  _attackDistance)
             {
-                attackDelay -= Time.deltaTime;
-                if (attackDelay <= 0.0f)
+                _attackDelay -= Time.deltaTime;
+                if (_attackDelay <= 0.0f)
                 {
                     Shoot();
-                    attackDelay = 3.0f;
+                    _attackDelay = 3.0f;
                 }
             }
         }
@@ -86,7 +99,8 @@ namespace Archer
         public void FixedUpdateExecute()
         {
             MoveToPlayer();
-            //RotateUnit();
         }
+        
+        #endregion
     }
 }
