@@ -14,12 +14,16 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Interface/IStartExecute.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Player/PlayerController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/ObjectPool/ObjectPool.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Utility/CountdownTimer.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/InfantryView.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/MainControllers/MainMenuController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/BulletView.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Managers/InputManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Interface/IModel.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/InfantryModel.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Interface/IController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Player/PlayerView.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/InfantryEnemy.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/BombEnemy.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Managers/InputManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/BombView.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
@@ -34,13 +38,22 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/Interface/IUpdateExecute.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/BaseScripts/BaseObjectView.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/ObjectPool/ObjectPoolItem.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/MainControllers/MainGameController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Managers/InputManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/ObjectPool/ObjectPool.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Utility/CountdownTimer.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/BulletView.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerModel.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Interface/IModel.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Interface/IView.cs" />
+      <option value="$PROJECT_DIR$/Assets/BombView.cs" />
+      <option value="$PROJECT_DIR$/Assets/InfantryView.cs" />
+      <option value="$PROJECT_DIR$/Assets/InfantryModel.cs" />
+      <option value="$PROJECT_DIR$/Assets/BombModel.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/BaseScripts/BaseEnemy.cs" />
+      <option value="$PROJECT_DIR$/Assets/BombEnemy.cs" />
+      <option value="$PROJECT_DIR$/Assets/InfantryEnemy.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/MainControllers/MainGameController.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1qIhA25N5ZK2n1jZil4HPm8Er6x" />
@@ -94,6 +107,7 @@
       <workItem from="1616846603699" duration="739000" />
       <workItem from="1616847658505" duration="5726000" />
       <workItem from="1616858658497" duration="3598000" />
+      <workItem from="1617015275762" duration="2481000" />
     </task>
     <servers />
   </component>

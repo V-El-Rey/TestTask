@@ -6,8 +6,15 @@
     <e p="P:\TestTask\TestTask" t="IncludeRecursive">
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
+        <e p="BombEnemy.cs" t="Include" />
+        <e p="BombModel.cs" t="Include" />
+        <e p="BombView.cs" t="Include" />
+        <e p="InfantryEnemy.cs" t="Include" />
+        <e p="InfantryModel.cs" t="Include" />
+        <e p="InfantryView.cs" t="Include" />
         <e p="Scripts" t="Include">
           <e p="BaseScripts" t="Include">
+            <e p="BaseEnemy.cs" t="Include" />
             <e p="BaseObjectView.cs" t="Include" />
           </e>
           <e p="BulletView.cs" t="Include" />
@@ -16,8 +23,10 @@
           </e>
           <e p="Interface" t="Include">
             <e p="IController.cs" t="Include" />
+            <e p="IModel.cs" t="Include" />
             <e p="IStartExecute.cs" t="Include" />
             <e p="IUpdateExecute.cs" t="Include" />
+            <e p="IView.cs" t="Include" />
           </e>
           <e p="MainControllers" t="Include">
             <e p="MainGameController.cs" t="Include" />

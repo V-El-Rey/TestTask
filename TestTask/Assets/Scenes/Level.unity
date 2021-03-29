@@ -171,6 +171,12 @@ MonoBehaviour:
   gameObjectsToPool:
   - amountToPool: 2
     objectToPool: {fileID: 8507256640347170230, guid: 6db88be48f317ae41baaed084d7cfa1d, type: 3}
+  - amountToPool: 2
+    objectToPool: {fileID: 0}
+  - amountToPool: 2
+    objectToPool: {fileID: 0}
+  bombView: {fileID: 0}
+  infantryView: {fileID: 0}
 --- !u!1 &2106384579
 GameObject:
   m_ObjectHideFlags: 0
